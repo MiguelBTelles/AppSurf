@@ -17,6 +17,7 @@ export default function Layout() {
       <Stack.Screen name='add-instructor' options={{ headerShown: false }} />
       <Stack.Screen name='add-student' options={{ headerShown: false }} />
       <Stack.Screen name='my-templates' options={{ headerShown: false }} />
+      <Stack.Screen name='create-template' options={{ headerShown: false }} />
     </Stack>
 
   );

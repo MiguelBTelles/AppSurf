@@ -1,6 +1,8 @@
+import { TagChipComponent } from "@/components/atoms/tag-component/tag-chip-component";
 import { COLORS } from "@/constants/constants";
 import React from "react";
 import { View, TouchableOpacity, Image, Text, ImageSourcePropType } from 'react-native';
+import { Chip } from 'react-native-paper';
 
 interface ClassCardComponentProps {
     image: ImageSourcePropType,
@@ -9,11 +11,13 @@ interface ClassCardComponentProps {
     date: string,
     hour: string,
     tags?: string[]
+    onPress: any
 }
 
-export function ClassCardComponent({ image, title, instructor, date, hour, tags = [] }: ClassCardComponentProps) {
+export function ClassCardComponent({ image, title, instructor, date, hour, tags = [], onPress }: ClassCardComponentProps) {
     return (
         <TouchableOpacity
+            onPress={onPress}
             style={{
                 gap: 12,
                 borderWidth: 1,
@@ -21,14 +25,11 @@ export function ClassCardComponent({ image, title, instructor, date, hour, tags 
                 flexDirection: 'row',
                 padding: 12,
                 flex: 1,
-                borderRadius: 12, shadowColor: '#000',
-                shadowOffset: {
-                    width: 3,
-                    height: 10,
-                },
+                borderRadius: 12,
+                shadowColor: '#000',
+                shadowOffset: { width: 3, height: 10 },
                 shadowOpacity: 0.1,
                 shadowRadius: 4,
-                
             }}
         >
             <View>
@@ -47,13 +48,11 @@ export function ClassCardComponent({ image, title, instructor, date, hour, tags 
                 flex: 1,
                 marginLeft: 12,
             }}>
-                <Text
-                    style={{
-                        fontSize: 20,
-                        fontWeight: 600,
-                        flexWrap: 'wrap',
-                    }}
-                >
+                <Text style={{
+                    fontSize: 20,
+                    fontWeight: '600',
+                    flexWrap: 'wrap',
+                }}>
                     {title}
                 </Text>
                 <View>
@@ -64,7 +63,7 @@ export function ClassCardComponent({ image, title, instructor, date, hour, tags 
                         {instructor}
                     </Text>
                 </View>
-                <View style={{flexDirection: 'row', justifyContent: 'space-between'}}>
+                <View style={{ flexDirection: 'row', justifyContent: 'space-between' }}>
                     <View>
                         <Text style={{ color: COLORS.grayText, fontSize: 16 }}>
                             DATA
@@ -82,29 +81,13 @@ export function ClassCardComponent({ image, title, instructor, date, hour, tags 
                         </Text>
                     </View>
                 </View>
-                <View style={{ 
-                flexDirection: 'row', 
-                flexWrap: 'wrap', 
-                gap: 8 
-            }}>
-                {tags.map((tag, index) => (
-                    <View 
-                        key={index}
-                        style={{
-                            backgroundColor: COLORS.searchInput,
-                            paddingHorizontal: 12,
-                            paddingVertical: 4,
-                            borderRadius: 16,
-                        }}
-                    >
-                        <Text style={{ 
-                            fontSize: 12 
-                        }}>
-                            {tag}
-                        </Text>
-                    </View>
-                ))}
-            </View>
+
+                <View style={{ flexDirection: 'row', flexWrap: 'wrap', gap: 8 }}>
+                    {tags.map((tag, index) => (
+                        <TagChipComponent key={index} tag={tag} />
+                    ))}
+                </View>
+
             </View>
         </TouchableOpacity>
     )

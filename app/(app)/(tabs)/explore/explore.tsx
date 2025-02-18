@@ -1,4 +1,4 @@
-import { AddClassComponent } from '@/components/atoms/add-class-component.tsx/add-class-component';
+import { AddClassComponent } from '@/components/atoms/add-class-component/add-class-component';
 import { SearchInputComponent } from '@/components/atoms/inputs/search-input-component/search-input-component';
 import { ContainerComponent } from '@/components/hoc/container-component/container-component';
 import { ContentComponent } from '@/components/hoc/content-component/content-component';
@@ -26,9 +26,9 @@ export default function Explore() {
             <AddClassComponent onPress={()=>{}}/>
           </View>
           <View style={{gap: 24, marginTop: 12}}>
-            <ClassCardComponent image={require('../../../../assets/images/Image.jpg')} title={'Aula de surf na praia do Arpoador  '} instructor='Miguel Bastos' date={'28 de jun'} hour={'09:10 - 09:50'} tags={['Avançado', 'Ondas Grandes',]} />
-            <ClassCardComponent image={require('../../../../assets/images/Image.jpg')} title={'Aula de surf na praia do Arpoador  '} instructor='Miguel Bastos' date={'28 de jun'} hour={'09:10 - 09:50'} tags={['Avançado', 'Ondas Grandes',]} />
-            <ClassCardComponent image={require('../../../../assets/images/Image.jpg')} title={'Aula de surf na praia do Arpoador  '} instructor='Miguel Bastos' date={'28 de jun'} hour={'09:10 - 09:50'} tags={['Avançado', 'Ondas Grandes',]} />
+            <ClassCardComponent image={require('../../../../assets/images/Image.jpg')} title={'Aula de surf na praia do Arpoador  '} instructor='Miguel Bastos' date={'28 de jun'} hour={'09:10 - 09:50'} tags={['Avançado', 'Ondas Grandes',]} onPress={undefined} />
+            <ClassCardComponent image={require('../../../../assets/images/Image.jpg')} title={'Aula de surf na praia do Arpoador  '} instructor='Miguel Bastos' date={'28 de jun'} hour={'09:10 - 09:50'} tags={['Avançado', 'Ondas Grandes',]} onPress={undefined} />
+            <ClassCardComponent image={require('../../../../assets/images/Image.jpg')} title={'Aula de surf na praia do Arpoador  '} instructor='Miguel Bastos' date={'28 de jun'} hour={'09:10 - 09:50'} tags={['Avançado', 'Ondas Grandes',]} onPress={undefined} />
           </View>
         </ContentComponent>
       </ScrollComponent>
