@@ -8,17 +8,16 @@ interface AddTagsComponentsProps {
     tags: string[];
 }
 
-export function AddTagsComponents({ tags }: AddTagsComponentsProps) {
+export function ViewTagsComponents({ tags }: AddTagsComponentsProps) {
     return (
         <View style={{ gap: 12 }}>
-            <Text style={{ marginLeft: 12, color: COLORS.grayText, fontSize: 16 }}>ADICIONAR TAGS</Text>
+            <Text style={{ marginLeft: 12, fontSize: 20, fontWeight: 500 }}>Tags</Text>
 
             <View style={{
                 borderWidth: 1,
                 borderColor: COLORS.grayText,
                 borderRadius: 12,
                 width: '100%',
-                height: 100,
                 padding: 12,
                 flexDirection: "row",
                 flexWrap: "wrap",
@@ -28,9 +27,6 @@ export function AddTagsComponents({ tags }: AddTagsComponentsProps) {
                 {tags.map((tag, index) => (
                     <TagChipComponent key={index} tag={tag} />
                 ))}
-                <TouchableOpacity>
-                    <Ionicons name="add-circle" size={28} color={COLORS.grayText} />
-                </TouchableOpacity>
             </View>
         </View>
     );

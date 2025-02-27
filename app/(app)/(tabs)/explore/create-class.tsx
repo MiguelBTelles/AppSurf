@@ -11,7 +11,7 @@ import { useRouter } from 'expo-router';
 import React, { useState } from 'react';
 import { View, Text } from 'react-native'
 
-export default function CreateTemplate() {
+export default function CreateClass() {
     const router = useRouter()
     const [credentials, setCredentials] = useState({
         class_name: '',

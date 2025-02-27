@@ -15,14 +15,46 @@ export default function MyTemplates() {
             <ScrollComponent>
                 <ContentComponent>
                     <View>
-                        <HeaderComponent onBack={() => {router.navigate('/(app)/(tabs)/profile/profile')} } title='Seus Templates' />
+                        <HeaderComponent onBack={() => { router.navigate('/(app)/(tabs)/profile/profile') }} title='Seus Templates' />
                     </View>
-                    <View style={{gap: 24, marginTop: 40}}>
-                        <ClassCardComponent image={require('../../../../assets/images/Image.jpg')} title={'Aula de surf na praia do Arpoador  '} instructor='Miguel Bastos' date={'28 de jun'} hour={'09:10 - 09:50'} tags={['Avançado', 'Ondas Grandes',]} onPress={undefined} />
-                        <ClassCardComponent image={require('../../../../assets/images/Image.jpg')} title={'Aula de surf na praia do Arpoador  '} instructor='Miguel Bastos' date={'28 de jun'} hour={'09:10 - 09:50'} tags={['Avançado', 'Ondas Grandes',]} onPress={undefined} />
+                    <View style={{ gap: 24, marginTop: 40 }}>
+                        <ClassCardComponent image={require('../../../../assets/images/Image.jpg')} title={'Aula de surf na praia do Arpoador  '} instructor='Miguel Bastos' date={'28 de jun'} hour={'09:10 - 09:50'} tags={['Avançado', 'Ondas Grandes',]} onPress={
+                            () => {
+                                router.push({
+                                    pathname: '/(app)/(tabs)/profile/template',
+                                    params: {
+                                        image: '../../../../assets/images/Image.jpg',
+                                        title: 'Aula de surf na praia do Arpoador',
+                                        instructor: 'Miguel Bastos',
+                                        student: 'João',
+                                        date: '28 de jun',
+                                        hour: '09:10 - 09:50',
+                                        about_the_class: 'Aula de surf para iniciantes',
+                                        value: 'R$ 50,00',
+                                        tags: JSON.stringify(['Avançado', 'Ondas Grandes'])
+                                    }
+                                });
+                            }} />
+                        <ClassCardComponent image={require('../../../../assets/images/Image.jpg')} title={'Aula de surf na praia do Arpoador  '} instructor='Miguel Bastos' date={'28 de jun'} hour={'09:10 - 09:50'} tags={['Avançado', 'Ondas Grandes',]} onPress={
+                            () => {
+                                router.push({
+                                    pathname: '/(app)/(tabs)/profile/template',
+                                    params: {
+                                        image: '../../../../assets/images/Image.jpg',
+                                        title: 'Aula de surf na praia do Arpoador',
+                                        instructor: 'Miguel Bastos',
+                                        student: 'João',
+                                        date: '28 de jun',
+                                        hour: '09:10 - 09:50',
+                                        about_the_class: 'Aula de surf para iniciantes',
+                                        value: 'R$ 50,00',
+                                        tags: JSON.stringify(['Avançado', 'Ondas Grandes'])
+                                    }
+                                });
+                            }} />
                     </View>
-                    <View style={{marginTop: 40}}>
-                        <ButtonComponent text='CRIAR' onPress={()=>{router.navigate('/(app)/(tabs)/profile/create-template')}}/>
+                    <View style={{ marginTop: 40 }}>
+                        <ButtonComponent text='CRIAR' onPress={() => { router.navigate('/(app)/(tabs)/profile/create-template') }} />
                     </View>
                 </ContentComponent>
             </ScrollComponent>

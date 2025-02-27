@@ -23,12 +23,12 @@ export default function Explore() {
           <View style={{gap: 20}}>
             <SearchInputComponent label={'PROCURAR AULAS'} value={''} onChangeText={undefined} />
             <InstructorsListComponent label='INSTRUTORES' onPress={undefined} addInstructor={undefined} perfil={require('../../../../assets/images/user.png')} instructors={3}/>
-            <AddClassComponent onPress={()=>{}}/>
+            <AddClassComponent onPress={()=>{router.navigate('/(app)/(tabs)/explore/create-class')}}/>
           </View>
           <View style={{gap: 24, marginTop: 12}}>
-            <ClassCardComponent image={require('../../../../assets/images/Image.jpg')} title={'Aula de surf na praia do Arpoador  '} instructor='Miguel Bastos' date={'28 de jun'} hour={'09:10 - 09:50'} tags={['Avançado', 'Ondas Grandes',]} onPress={undefined} />
-            <ClassCardComponent image={require('../../../../assets/images/Image.jpg')} title={'Aula de surf na praia do Arpoador  '} instructor='Miguel Bastos' date={'28 de jun'} hour={'09:10 - 09:50'} tags={['Avançado', 'Ondas Grandes',]} onPress={undefined} />
-            <ClassCardComponent image={require('../../../../assets/images/Image.jpg')} title={'Aula de surf na praia do Arpoador  '} instructor='Miguel Bastos' date={'28 de jun'} hour={'09:10 - 09:50'} tags={['Avançado', 'Ondas Grandes',]} onPress={undefined} />
+            <ClassCardComponent image={require('../../../../assets/images/Image.jpg')} title={'Aula de surf na praia do Arpoador  '} instructor='Miguel Bastos' date={'28 de jun'} hour={'09:10 - 09:50'} tags={['Avançado', 'Ondas Grandes',]} onPress={()=>{router.navigate('/(app)/(tabs)/explore/class')}} />
+            <ClassCardComponent image={require('../../../../assets/images/Image.jpg')} title={'Aula de surf na praia do Arpoador  '} instructor='Miguel Bastos' date={'28 de jun'} hour={'09:10 - 09:50'} tags={['Avançado', 'Ondas Grandes',]} onPress={()=>{router.navigate('/(app)/(tabs)/explore/class')}} />
+            <ClassCardComponent image={require('../../../../assets/images/Image.jpg')} title={'Aula de surf na praia do Arpoador  '} instructor='Miguel Bastos' date={'28 de jun'} hour={'09:10 - 09:50'} tags={['Avançado', 'Ondas Grandes',]} onPress={()=>{router.navigate('/(app)/(tabs)/explore/class')}} />
           </View>
         </ContentComponent>
       </ScrollComponent>
